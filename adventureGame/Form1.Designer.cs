@@ -32,6 +32,7 @@
             this.desision1 = new System.Windows.Forms.Button();
             this.desision2 = new System.Windows.Forms.Button();
             this.desision3 = new System.Windows.Forms.Button();
+            this.guessTextLabel = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // outputLabel
@@ -70,11 +71,21 @@
             this.desision3.UseVisualStyleBackColor = true;
             this.desision3.Click += new System.EventHandler(this.desision3_Click);
             // 
+            // guessTextLabel
+            // 
+            this.guessTextLabel.Location = new System.Drawing.Point(12, 306);
+            this.guessTextLabel.Name = "guessTextLabel";
+            this.guessTextLabel.Size = new System.Drawing.Size(776, 27);
+            this.guessTextLabel.TabIndex = 4;
+            this.guessTextLabel.Visible = false;
+            this.guessTextLabel.TextChanged += new System.EventHandler(this.guessTextLabel_TextChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.guessTextLabel);
             this.Controls.Add(this.desision3);
             this.Controls.Add(this.desision2);
             this.Controls.Add(this.desision1);
@@ -82,6 +93,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -91,5 +103,6 @@
         private Button desision1;
         private Button desision2;
         private Button desision3;
+        private TextBox guessTextLabel;
     }
 }
