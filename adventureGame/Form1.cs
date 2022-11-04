@@ -19,6 +19,7 @@ namespace adventureGame
         int add2;
         int sumAdd;
         int guessedNum;
+        int fightChance;
         public Form1()
         {
             InitializeComponent();
@@ -311,6 +312,25 @@ namespace adventureGame
                     {
                         outputLabel.Text = "Too low";
                     }
+                    break;
+                case 14:
+                    fightChance = randNum.Next(1, 50);
+                    switch (fightChance)
+                    {
+                        case 1:
+                            pageNum = 15;
+                            break;
+                        default:
+                            death = $"Unfair Fight";
+                            pageNum = 99;
+                            break;
+                    }
+                    break;
+                case 15:
+                    outputLabel.Text = "You receive a set of armor, weapons and tools. Where do you go next?";
+                    desision1.Text = "South";
+                    desision2.Text = "North";
+                    desision3.Text = "";
                     break;
                 case 99:
                     outputLabel.Text = $"You died: {death}, no ending for you haha";
