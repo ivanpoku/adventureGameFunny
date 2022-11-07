@@ -1,3 +1,7 @@
+//Text Adventure Game
+//Vaniya Pokusaev
+
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,9 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
-using System.Media;
-using System.Resources;
-
+using System.Windows.Forms.PropertyGridInternal;
 
 namespace adventureGame
 {
@@ -42,10 +44,11 @@ namespace adventureGame
         {
             InitializeComponent();
 
+            //The Page that is displayed when the player starts the game.
+            
             switch (pageNum)
             {
                 case 1:
-                    
                     playerHealth.Visible = false;
                     dragonHealth.Visible = false;
                     deathOrbLabel.Visible = false;
@@ -60,11 +63,15 @@ namespace adventureGame
 
         private void desision1_Click(object sender, EventArgs e)
         {
+           //If statements that allow for the user to click through pages.
+            
             if (pageNum == 1)
             {
-                generatedNum = randNum.Next(1, 100);
+                generatedNum = randNum.Next(1, 101);
                 switch (generatedNum)
                 {
+                    //The player has a 1 in 100 chance to get unlucky and die after trying to go to the next page.
+                    
                     case 1:
                         ending = "You stepped on a nail and started bleeding";
                         pageNum = 100;
@@ -131,6 +138,8 @@ namespace adventureGame
             }
             else if (pageNum == 18)
             {
+                //A player vs enviornment system where the player will deal a set amount of damage to the dragon while the dragon will deal a range of damage to a player.
+                
                 dragonMelee = randNum.Next(5, 16);
                 playerHP -= dragonMelee;
                 dragonHP -= 100;
@@ -150,6 +159,8 @@ namespace adventureGame
                     pageNum = 18;
                 }
             }
+            
+            //Ending and Death pages where the player can restart the game.
             else if (pageNum == 99)
             {
 
@@ -162,6 +173,8 @@ namespace adventureGame
 
 
 
+            //Switch cases that displays what is on each page.
+            
             switch (pageNum)
             {
                 case 1:
@@ -650,6 +663,8 @@ namespace adventureGame
                     desision1.Text = "Red";
                     desision2.Text = "Green";
                     desision3.Text = "Blue";
+                    switch (colorNum)
+                    switch (colorNum)
                     switch (colorNum)
                     {
                         case 1:
