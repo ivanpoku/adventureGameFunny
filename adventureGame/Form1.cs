@@ -11,6 +11,7 @@ using System.Threading;
 using System.Media;
 using System.Resources;
 
+
 namespace adventureGame
 {
     public partial class Form1 : Form
@@ -44,7 +45,7 @@ namespace adventureGame
             switch (pageNum)
             {
                 case 1:
-                    pictureBox1.Image = (System.Resources.)
+                    
                     playerHealth.Visible = false;
                     dragonHealth.Visible = false;
                     deathOrbLabel.Visible = false;
