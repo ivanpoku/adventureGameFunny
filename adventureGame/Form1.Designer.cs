@@ -33,6 +33,12 @@
             this.desision2 = new System.Windows.Forms.Button();
             this.desision3 = new System.Windows.Forms.Button();
             this.guessTextLabel = new System.Windows.Forms.TextBox();
+            this.playerHealth = new System.Windows.Forms.Label();
+            this.dragonHealth = new System.Windows.Forms.Label();
+            this.deathOrbLabel = new System.Windows.Forms.Label();
+            this.backgroundLabel = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // outputLabel
@@ -80,18 +86,66 @@
             this.guessTextLabel.Visible = false;
             this.guessTextLabel.TextChanged += new System.EventHandler(this.guessTextLabel_TextChanged);
             // 
+            // playerHealth
+            // 
+            this.playerHealth.Location = new System.Drawing.Point(23, 24);
+            this.playerHealth.Name = "playerHealth";
+            this.playerHealth.Size = new System.Drawing.Size(155, 25);
+            this.playerHealth.TabIndex = 5;
+            this.playerHealth.Text = "label1";
+            this.playerHealth.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // dragonHealth
+            // 
+            this.dragonHealth.Location = new System.Drawing.Point(23, 78);
+            this.dragonHealth.Name = "dragonHealth";
+            this.dragonHealth.Size = new System.Drawing.Size(155, 25);
+            this.dragonHealth.TabIndex = 6;
+            this.dragonHealth.Text = "label1";
+            this.dragonHealth.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // deathOrbLabel
+            // 
+            this.deathOrbLabel.Location = new System.Drawing.Point(633, 24);
+            this.deathOrbLabel.Name = "deathOrbLabel";
+            this.deathOrbLabel.Size = new System.Drawing.Size(155, 25);
+            this.deathOrbLabel.TabIndex = 7;
+            this.deathOrbLabel.Text = "label1";
+            this.deathOrbLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // backgroundLabel
+            // 
+            this.backgroundLabel.Location = new System.Drawing.Point(-15, -49);
+            this.backgroundLabel.Name = "backgroundLabel";
+            this.backgroundLabel.Size = new System.Drawing.Size(834, 517);
+            this.backgroundLabel.TabIndex = 8;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(218, 78);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(379, 211);
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.deathOrbLabel);
+            this.Controls.Add(this.dragonHealth);
+            this.Controls.Add(this.playerHealth);
             this.Controls.Add(this.guessTextLabel);
             this.Controls.Add(this.desision3);
             this.Controls.Add(this.desision2);
             this.Controls.Add(this.desision1);
             this.Controls.Add(this.outputLabel);
+            this.Controls.Add(this.backgroundLabel);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -104,5 +158,10 @@
         private Button desision2;
         private Button desision3;
         private TextBox guessTextLabel;
+        private Label playerHealth;
+        private Label dragonHealth;
+        private Label deathOrbLabel;
+        private Label backgroundLabel;
+        private PictureBox pictureBox1;
     }
 }
