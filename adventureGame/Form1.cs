@@ -73,6 +73,7 @@ namespace adventureGame
                     //The player has a 1 in 100 chance to get unlucky and die after trying to go to the next page.
                     
                     case 1:
+                        pictureBox1.Image = Properties.Resources.page1Nail;
                         ending = "You stepped on a nail and started bleeding";
                         pageNum = 100;
                         break;
@@ -125,8 +126,12 @@ namespace adventureGame
                 if (core1 == true && core2 == true && core3 == true) ;
                 {
                     ending = $"You found all the cores and completed the quest. Good job.";
-                    pageNum = 100;
+                    pageNum = 97;
                 }
+            }
+            else if (pageNum == 97)
+            {
+                pageNum = 100;
             }
             else if (pageNum == 16)
             {
@@ -187,50 +192,63 @@ namespace adventureGame
                     outputLabel.Text = "You run into an enemy. Fight it?";
                     desision1.Text = "No";
                     desision2.Text = "Yes";
+
+                    pictureBox1.Image = Properties.Resources.page2;
                     break;
                 case 3:
                     outputLabel.Text = "It begins to get dark as you adventure. Sleep?";
                     desision1.Text = "Continue";
                     desision2.Text = "Sleep";
+                    pictureBox1.Image = Properties.Resources.page3;
                     break;
                 case 4:
                     outputLabel.Text = "You find a building. Enter?";
                     desision1.Text = "Yes";
                     desision2.Text = "No";
+                    pictureBox1.Image = Properties.Resources.page4;
                     break;
                 case 5:
                     outputLabel.Text = "You see a man inside offering you a quest. Do you accept it?";
                     desision1.Text = "Accept";
                     desision2.Text = "Decline";
+                    pictureBox1.Image = Properties.Resources.page5;
                     break;
                 case 6:
                     outputLabel.Text = "You are brought back to where you started. It seems a new path is unlocked.";
                     desision1.Text = $"Forest {locked}";
                     desision2.Text = "Town";
+                    pictureBox1.Image = Properties.Resources.page6;
                     break;
                 case 7:
                     outputLabel.Text = "You see three strange buildings. Which one do you enter?";
                     desision1.Text = "Building 1";
                     desision2.Text = "Building 2";
                     desision3.Text = "Building 3";
+                    pictureBox1.Image = Properties.Resources.page7;
                     break;
                 case 8:
                     outputLabel.Text = "You find a safe with something inside. What do you use to break in?";
                     desision1.Text = "Drill";
                     desision2.Text = "Pencil";
                     desision3.Text = "A pipe bomb made using quora posts";
+                    pictureBox1.Image = Properties.Resources.page8;
                     break;
                 case 9:
+                    pictureBox1.Image = Properties.Resources.page7;
                     outputLabel.Text = "You found core 2";
                     desision1.Text = "Building 1";
                     desision2.Text = $"Building 2 {locked}";
                     desision3.Text = "Building 3";
+                    
                     break;
                 case 10:
+
+                    pictureBox1.Image = Properties.Resources.page7;
                     outputLabel.Text = "You found core 1";
                     desision1.Text = $"Building 1 {locked}";
                     desision2.Text = "Building 2";
                     desision3.Text = "Building 3";
+                    
                     break;
                 case 11:
                     backgroundLabel.BackColor = Color.White;
@@ -238,23 +256,28 @@ namespace adventureGame
                     desision1.Text = "";
                     desision2.Text = "Complete Quest";
                     desision3.Text = $"";
+                    pictureBox1.Image = Properties.Resources.page7;
                     if (core1 == true && core2 == true && core3 == true) ;
                     {
+                        pictureBox1.Image = Properties.Resources.page11;
                         ending = $"You found all the cores and completed the quest. Good job.";
                         pageNum = 100;
                     }
                     break;
                 case 16:
+                    
                     outputLabel.Text = "You receive a set of armor, weapons and tools. Where do you go next?";
                     desision1.Text = "South";
                     desision2.Text = "North";
                     desision3.Text = "";
+                    pictureBox1.Image = Properties.Resources.page16;
                     break;
                 case 17:
                     outputLabel.Text = "You see a cave and a structure in the distance. Which do you enter?";
                     desision1.Text = "Cave";
                     desision2.Text = "Structure";
                     desision3.Text = "";
+                    pictureBox1.Image = Properties.Resources.page17;
                     break;
                 case 18:
                     playerHealth.Visible = true;
@@ -264,6 +287,9 @@ namespace adventureGame
                     outputLabel.Text = "You find a dragon in the cave";
                     desision1.Text = "Use melee attack";
                     desision2.Text = "Use ranged attack";
+                    pictureBox1.Image = Properties.Resources.page18;
+                    break;
+                case 97:
                     break;
                 case 99:
                     outputLabel.Text = $"You died: {death}, no ending for you haha";
@@ -291,6 +317,7 @@ namespace adventureGame
             }
             else if (pageNum == 2)
             {
+                death = "Unfair Fight";
                 pageNum = 14;
             }
             else if (pageNum == 3)
@@ -379,13 +406,23 @@ namespace adventureGame
                 }
                 else if (playerHP == 0 || playerHP < 0)
                 {
-                    death = "You died to the dragon trying to hit it with ranged attack";
+
                     pageNum = 99;
                 }
                 else
                 {
                     pageNum = 18;
                 }
+            }
+            else if (pageNum == 97)
+            {
+                pageNum = 100;
+            }
+                
+            else if (pageNum == 98)
+            {
+                death = "Unfair Fight";
+                pageNum = 99;
             }
             else if (pageNum == 99)
             {
@@ -432,6 +469,7 @@ namespace adventureGame
                     desision2.Text = "Town";
                     break;
                 case 7:
+                    pictureBox1.Image = Properties.Resources.page7;
                     outputLabel.Text = "You see three strange buildings. Which one do you enter?";
                     desision1.Text = "Building 1";
                     desision2.Text = "Building 2";
@@ -445,6 +483,7 @@ namespace adventureGame
                     break;
                 case 9:
                     outputLabel.Text = "You found core 2";
+                    pictureBox1.Image = Properties.Resources.page7;
                     guessTextLabel.Visible = false;
                     backgroundLabel.BackColor = Color.White;
                     desision1.Text = "Building 1";
@@ -452,6 +491,7 @@ namespace adventureGame
                     desision3.Text = "Building 3";
                     break;
                 case 10:
+                    pictureBox1.Image = Properties.Resources.page7;
                     guessTextLabel.Visible = false;
                     outputLabel.Text = "You found core 1";
 
@@ -461,6 +501,8 @@ namespace adventureGame
                     desision3.Text = "Building 3";
                     break;
                 case 11:
+
+                    pictureBox1.Image = Properties.Resources.page7;
                     outputLabel.Text = "You found core 3";
                     guessTextLabel.Visible = false;
                     backgroundLabel.BackColor = Color.White;
@@ -475,7 +517,7 @@ namespace adventureGame
                     break;
                 case 12:
 
-
+                    pictureBox1.Image = Properties.Resources.page12;
                     add1 = randNum.Next(1, 100);
                     add2 = randNum.Next(1, 100);
                     sumAdd = add1 + add2;
@@ -530,7 +572,7 @@ namespace adventureGame
                             break;
                         default:
                             death = $"Unfair Fight";
-                            pageNum = 99;
+                            pageNum = 98;
                             break;
                     }
                     break;
@@ -556,10 +598,12 @@ namespace adventureGame
                     outputLabel.Text = "You find a dragon in the cave";
                     desision1.Text = "Use melee attack";
                     desision2.Text = "Use ranged attack";
-                    if (deathOrb == true)
+                    if (deathOrbLabel.Visible == true)
                     {
                         desision3.Text = "Use Death Orb";
                     }
+                    break;
+                        case 97:
                     break;
                 case 98:
                     break;
@@ -621,14 +665,20 @@ namespace adventureGame
             else if (pageNum == 18)
             {
 
+                pictureBox1.Image = Properties.Resources.deathOrb;
                 dragonHP = 0;
                 ending = "You defeated the dragon with the death orb";
+                pageNum = 100;
+            }
+            else if (pageNum == 97)
+            {
                 pageNum = 100;
             }
 
             switch (pageNum)
             {
                 case 7:
+                    pictureBox1.Image = Properties.Resources.page7;
                     outputLabel.Text = "You see three strange buildings. Which one do you enter?";
                     guessTextLabel.Visible = false;
                     backgroundLabel.BackColor = Color.White;
@@ -652,19 +702,19 @@ namespace adventureGame
                     if (core1 == true && core2 == true && core3 == true) ;
                     {
                         ending = $"You found all the cores and completed the quest. Good job.";
-                        pageNum = 98;
+                        pageNum = 97;
                     }
                     break;
 
                 case 13:
+                    pictureBox1.Image = Properties.Resources.page12;
                     guessTextLabel.Visible = false;
                     colorNum = randNum.Next(1, 4);
                     outputLabel.Text = "What is the color of this?";
                     desision1.Text = "Red";
                     desision2.Text = "Green";
                     desision3.Text = "Blue";
-                    switch (colorNum)
-                    switch (colorNum)
+
                     switch (colorNum)
                     {
                         case 1:
@@ -692,6 +742,8 @@ namespace adventureGame
                     desision1.Text = "Use melee attack";
                     desision2.Text = "Use ranged attack";
 
+                    break;
+                case 97:
                     break;
                 case 98:
                     break;
