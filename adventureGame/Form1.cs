@@ -317,17 +317,20 @@ namespace adventureGame
             }
             else if (pageNum == 2)
             {
-                death = "Unfair Fight";
+                ending = "Unfair Fight";
                 pageNum = 14;
             }
             else if (pageNum == 3)
             {
+                pictureBox1.Image = Properties.Resources.ghost;
                 ending = "Ghost Parade";
                 pageNum = 100;
             }
             else if (pageNum == 4)
             {
-                pageNum = 5;
+                pageNum = 99;
+                pictureBox1.Image = Properties.Resources.hunter;
+                death = $"You got shot by a hidden hunter";
             }
             else if (pageNum == 5)
             {
@@ -416,13 +419,13 @@ namespace adventureGame
             }
             else if (pageNum == 97)
             {
-                pageNum = 100;
+                pageNum = 99;
             }
                 
             else if (pageNum == 98)
             {
-                death = "Unfair Fight";
-                pageNum = 99;
+
+                pageNum = 100;
             }
             else if (pageNum == 99)
             {
@@ -444,6 +447,7 @@ namespace adventureGame
                     desision2.Text = $"Town {locked}";
                     break;
                 case 2:
+                    death = "Unfair Fight";
                     outputLabel.Text = "You run into an enemy. Fight it?";
                     desision1.Text = "No";
                     desision2.Text = "Yes";
@@ -454,6 +458,7 @@ namespace adventureGame
                     desision2.Text = "Sleep";
                     break;
                 case 4:
+                    death = $"You got shot by a hidden hunter";
                     outputLabel.Text = "You find a building. Enter?";
                     desision1.Text = "Yes";
                     desision2.Text = "No";
@@ -556,22 +561,23 @@ namespace adventureGame
 
                     break;
                 case 14:
-                    fightChance = randNum.Next(1, 5);
+                    fightChance = randNum.Next(1, 2);
                     switch (fightChance)
                     {
                         case 1:
                             pageNum = 15;
-                            chanceItem = randNum.Next(1, 5);
+                            chanceItem = randNum.Next(1, 2);
                             switch (chanceItem)
                             {
                                 case 1:
+                                    pictureBox1.Image = Properties.Resources.deathOrb;
                                     deathOrb = true;
                                     deathOrbLabel.Visible = true;
                                     break;
                             }
                             break;
                         default:
-                            death = $"Unfair Fight";
+                            ending = $"Unfair Fight";
                             pageNum = 98;
                             break;
                     }
@@ -579,6 +585,7 @@ namespace adventureGame
                 case 15:
                     break;
                 case 16:
+                    pictureBox1.Image = Properties.Resources.compass;
                     outputLabel.Text = "You receive a set of armor, weapons and tools. Where do you go next?";
                     desision1.Text = "South";
                     desision2.Text = "North";
@@ -732,15 +739,26 @@ namespace adventureGame
                 case 18:
                     if (deathOrb == true)
                     {
-                        desision3.Text = "Use Death Orb";
+                        desision3.Text = $"Use Death Orb";
+                        playerHealth.Visible = true;
+                        dragonHealth.Visible = true;
+                        playerHealth.Text = $"Player Health: {playerHP}";
+                        dragonHealth.Text = $"Dragon Health: {dragonHP}";
+                        outputLabel.Text = "You find a dragon in the cave";
+                        desision1.Text = "Use melee attack";
+                        desision2.Text = "Use ranged attack";
                     }
-                    playerHealth.Visible = true;
-                    dragonHealth.Visible = true;
-                    playerHealth.Text = $"Player Health: {playerHP}";
-                    dragonHealth.Text = $"Dragon Health: {dragonHP}";
-                    outputLabel.Text = "You find a dragon in the cave";
-                    desision1.Text = "Use melee attack";
-                    desision2.Text = "Use ranged attack";
+                    else
+                    {
+                        playerHealth.Visible = true;
+                        dragonHealth.Visible = true;
+                        playerHealth.Text = $"Player Health: {playerHP}";
+                        dragonHealth.Text = $"Dragon Health: {dragonHP}";
+                        outputLabel.Text = "You find a dragon in the cave";
+                        desision1.Text = "Use melee attack";
+                        desision2.Text = "Use ranged attack";
+                    }
+                    
 
                     break;
                 case 97:
